@@ -1,0 +1,23 @@
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    color: #d4af37; /* Auriu */
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
