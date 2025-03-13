@@ -1,8 +1,25 @@
 <!-- <h1>Lista de Produse</h1>
 <app-product-list></app-product-list> -->
-<nav>
+<!-- <nav>
     <a routerLink="/">Acasă</a> |
     <a routerLink="/products">Produse</a>
+  </nav> -->
+  <nav>
+    <ul>
+      <li><a routerLink="/">Acasă</a></li>
+      <li><a routerLink="/products">Produse</a></li>
+      <li>
+        <a routerLink="/cart" class="cart-icon" [@cartAnimation]="animationState">
+          🛒 Coș <span class="cart-badge">{{ cartCount }}</span>
+        </a>
+      </li>
+    </ul>
+    <li *ngIf="authService.isLoggedIn(); else loggedOut">
+      <a (click)="logout()">Logout</a>
+    </li>
+    <ng-template #loggedOut>
+      <li><a routerLink="/login">Login</a></li>
+    </ng-template>
   </nav>
   
   <router-outlet></router-outlet>

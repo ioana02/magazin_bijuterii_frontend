@@ -10,14 +10,24 @@
 //     provideHttpClient() 
 //   ]
 // };
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http'; // ✅ Importă HttpClient
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+
+
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient() // ✅ Adaugă HttpClient ca provider
-  ]
+    provideHttpClient(), 
+    importProvidersFrom(FormsModule),
+    importProvidersFrom(BrowserAnimationsModule), // ✅ Adăugăm animațiile
+    importProvidersFrom(CommonModule),// ✅ Adăugăm CommonModule pentru ngIf
+  
+    ]
 };
